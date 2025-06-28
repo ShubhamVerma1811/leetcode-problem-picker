@@ -17,14 +17,58 @@ During my leetcode journey, I discovered the answer to "which problems should I 
 ```git clone https://github.com/evliang/leetcode-problem-picker.git```
 
 ## Usage:
-```python lcpp.py [-t stack trie graph dp] [--list airbnb google blind75 skipped] [-k 5] [-i]```
+
+### Interactive Helper Menu (Recommended for beginners)
+```python lcpp.py -m```
+
+This launches an interactive wizard that guides you through building your command. It will:
+- Show all available topics in an organized layout
+- Let you select topics by number instead of typing names
+- Allow you to exclude specific topics
+- Help you filter by difficulty level
+- Generate and optionally execute the final command
+
+### Command Line Options
+```python lcpp.py [-t stack trie graph dp] [-e graph dp] [--list airbnb google blind75 skipped] [-d Easy Medium Hard] [-k 5] [-i]```
 
 ```
+--help-menu -m      launches interactive helper menu to build your command (recommended for beginners)
 --topic_list -t     selects from a pool of problems associated with a subject (e.g. trie, greedy, graph)
+--exclude_topics -e excludes problems that belong to specified topics (e.g. dp, graph)
 --list -l           chooses problems from one or more text files (comma-delimited)
+                    use 'all' to include all problems from all_problems.json
+--difficulty -d     filters problems by difficulty level(s): Easy, Medium, Hard
 --num_problems -k   number of problems to get
 --interactive -i    interactive mode. Preferred way to input data. See section below for more info.
 note: no topic or list will result in a problem randomly being selected
+```
+
+### Examples:
+
+```bash
+# Launch the interactive helper menu (easiest way for beginners)
+python lcpp.py -m
+
+# Get 5 array problems
+python lcpp.py -t arr
+
+# Get 10 linked list problems (using the alias)
+python lcpp.py -t ll -k 10
+
+# Get 3 medium difficulty problems from the blind75 list
+python lcpp.py -d Medium -k 3
+
+# Get hard topological sort problems from all problems
+python lcpp.py -t "top sort" -d Hard -l all
+
+# Get both easy and medium problems from dynamic programming
+python lcpp.py -t dp -d Easy Medium -l all
+
+# Get array problems but exclude those that are also graph problems
+python lcpp.py -t arr -e graph -l all
+
+# Get linked list problems but exclude those that also involve recursion
+python lcpp.py -t ll -e recursion -l all
 ```
 
 ```python lcpp.py --info 91```
