@@ -24,7 +24,7 @@ During my leetcode journey, I discovered the answer to "which problems should I 
 
 ### Interactive Helper Menu (Recommended for beginners)
 
-`python lcpp.py -m`
+`python main.py -m`
 
 This launches an interactive wizard that guides you through building your command. It will:
 
@@ -36,7 +36,7 @@ This launches an interactive wizard that guides you through building your comman
 
 ### Command Line Options
 
-`python lcpp.py [-t stack trie graph dp] [-e graph dp] [--list airbnb google blind75 skipped] [-d Easy Medium Hard] [-k 5] [-i]`
+`python main.py [-t stack trie graph dp] [-e graph dp] [--list airbnb google blind75 skipped] [-d Easy Medium Hard] [-k 5] [-i]`
 
 ```
 --help-menu -m      launches interactive helper menu to build your command (recommended for beginners)
@@ -54,31 +54,31 @@ note: no topic or list will result in a problem randomly being selected
 
 ```bash
 # Launch the interactive helper menu (easiest way for beginners)
-python lcpp.py -m
+python main.py -m
 
 # Get 5 array problems
-python lcpp.py -t arr
+python main.py -t arr
 
 # Get 10 linked list problems (using the alias)
-python lcpp.py -t ll -k 10
+python main.py -t ll -k 10
 
 # Get 3 medium difficulty problems from the blind75 list
-python lcpp.py -d Medium -k 3
+python main.py -d Medium -k 3
 
 # Get hard topological sort problems from all problems
-python lcpp.py -t "top sort" -d Hard -l all
+python main.py -t "top sort" -d Hard -l all
 
 # Get both easy and medium problems from dynamic programming
-python lcpp.py -t dp -d Easy Medium -l all
+python main.py -t dp -d Easy Medium -l all
 
 # Get array problems but exclude those that are also graph problems
-python lcpp.py -t arr -e graph -l all
+python main.py -t arr -e graph -l all
 
 # Get linked list problems but exclude those that also involve recursion
-python lcpp.py -t ll -e recursion -l all
+python main.py -t ll -e recursion -l all
 ```
 
-`python lcpp.py --info 91`
+`python main.py --info 91`
 ![info usage](https://i.ibb.co/z7ndhVQ/Screen-Shot-2021-05-25-at-4-06-30-PM.png)
 Displays information about a specific problem: Name, difficulty, Acceptance rate, and companies that ask it
 
