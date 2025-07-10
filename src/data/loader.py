@@ -36,11 +36,25 @@ def load_all_data():
 
 def load_completed_list(user_data):
     completed1 = set()
-    with open(get_data_path("completed.csv"), "r") as f:
+    csv_path = get_data_path("completed.csv")
+
+    # Check if file exists, create if it doesn't
+    if not os.path.exists(csv_path):
+        # Create directory if it doesn't exist
+        os.makedirs(os.path.dirname(csv_path), exist_ok=True)
+        # Create empty file
+        with open(csv_path, "w") as f:
+            pass
+
+    # Read from existing file
+    with open(csv_path, "r") as f:
         for line in f.read().splitlines():
             try:
-                completed1.add(int(line.split(",")[0].strip()))
+                if line.strip():  # Skip empty lines
+                    completed1.add(int(line.split(",")[0].strip()))
             except ValueError:
                 continue
-    completed2 = set(user_data["completed"])
+
+    # Add problems from user data if available
+    completed2 = set(user_data.get("completed", []))
     return completed1.union(completed2)
