@@ -2,7 +2,8 @@
 import os
 import shutil
 
-def move_file(filename, destination='data'):
+
+def move_file(filename, destination="data"):
     """Move a file to the data directory if it exists."""
     if os.path.exists(filename):
         if not os.path.exists(destination):
@@ -13,13 +14,14 @@ def move_file(filename, destination='data'):
     else:
         print(f"File {filename} not found")
 
+
 # Data files to move
 files_to_move = [
-    'all_problems.json',
-    'company_to_problems.json',
-    'problem_to_companies.json',
-    'user.json',
-    'completed.csv'
+    "all_problems.json",
+    "company_to_problems.json",
+    "problem_to_companies.json",
+    "user.json",
+    "completed.csv",
 ]
 
 # Move each file

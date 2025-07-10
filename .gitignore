@@ -24,7 +24,6 @@ ENV/
 # Project specific
 *.log
 user.json
-completed.csv
 lcpp_old.py
 
 # Jupyter Notebook
